@@ -5,9 +5,9 @@ Unit tests for the Calculation class in the calculator module.
 from decimal import Decimal
 import pytest
 from calculator.Calculation import Calculation
-from calculator.operations import add,subtract,multiply,divide
+from calculator.operations import add,divide
 
-def test_calculate(a, b, operation, expected):
+def test_calculate(a: Decimal, b: Decimal, operation, expected):
     ''' Test Calculation object computes correct results for the operations. '''
     obj = Calculation(a, b, operation)
     assert obj.calculate() == expected, f"Operation {operation.__name__} has been failed!!"
